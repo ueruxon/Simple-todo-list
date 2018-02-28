@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700&subset=cyrillic,cyrillic-ext');
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7a9083;
+}
+
+.fa-check::before {content: "\f00c"}
+.fa-times::before {content: "\f00d"}
+
+.app-wrapper {
+  background: 
+    linear-gradient(
+    135deg, 
+    rgba(254,222,181,1) 0%, 
+    rgba(65,96,116,1) 100%
+  );
+  width: 359px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px -8px rgba(0,0,0,0.35);
+  margin-top: 10%; 
+}
+
+.app-wrapper button:hover {cursor: pointer}
+.app-wrapper button:focus {outline: none}
+
+.todos-wrapper {
+  overflow: scroll;
+  height: 100%;
+}
+
+.form-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 360px;
+  bottom: 0; 
+}
+.form-wrapper form {
+  height: 60px;
+}
+
+.form-wrapper input {
+  font-family: 'Fira Sans';
+  position: absolute;
+  border: 0 none;
+  width: 279px;
+  height: 58px;
+  background-color: rgba(0,0,0,.4);
+  color: white;
+  font-size: 20px;
+  padding-left: 15px;
+}
+.form-wrapper input:focus {
+  outline: none;
+  background-color: rgba(0,0,0,.5);
+}
+
+.form-wrapper button {
+  color: white;
+  position: absolute;
+  background-color: rgba(0,0,0,.4);
+  border: 0;
+  padding: 0;
+  width: 64px;
+  height: 100%;
+  right: 0; 
+}
+.form-wrapper button i {
+  font-size: 40px;
+  padding: 0 none;
+}
+.form-wrapper button form {height: 60px}
+
+.filters-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.filters-wrapper button {
+  color: white;
+  font-family: 'Fira Sans';
+  font-weight: 800;
+  width: 100%;
+  border: 0 none;
+  background-color: rgba(0,0,0,.4);
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 10px;
+  transition: all .2s ease;
+}
+.filters-wrapper button:hover {background-color: rgba(0,0,0,.5)}
+.filters-wrapper button:focus {
+  outline: none;
+  background-color: rgba(0,0,0,.5);
+}
+
+.todos-wrapper {
+  max-height: 480px;
+  overflow: auto;
+}
+
+.todos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%; 
+}
+.todos-list li {
+  height: 60px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255,255,255,.3);
+  border-bottom: 4px solid rgba(255,255,255,.2);
+}
+.todos-list button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 10px;
+  border: 0 none;
+  background-color: rgba(0,0,0,.1);
+  transition: background-color .2s;
+}
+.todos-list button i {
+  color: rgba(255,255,255,.5);
+  transition: color .2s;
+}
+
+
+
+.todos-list button:hover {cursor: pointer}
+.todos-list button:hover i {color: rgba(255,255,255,1)}
+
+.todos-list .completed-todo:hover i {color: green}
+.todos-list .completed-todo i {color: green}
+
+.todos-list .toggle-todo {
+  margin-left: auto;
+}
+.todos-list .remove-todo {
+  margin-right: auto;
+}
+.todos-list .completed-todo {
+  background-color: white; 
+}
+
+.todo-group-enter {
+  opacity: 0;
+  max-height: 0;
+  transform: translateX(-120%); 
+}
+.todo-group-enter.todo-group-enter-active {
+  opacity: 1;
+  max-height: 60px;
+  transform: translateX(0);
+  transition: all 200ms;
+}
+
+.todo-group-leave {
+  opacity: 1;
+  max-height: 60px;
+  transform: translateX(0);
+}
+.todo-group-leave.todo-group-leave-active {
+  opacity: 0;
+  transform: translateX(-120%);
+  max-height: 0;
+  transition: all 200ms;
+}

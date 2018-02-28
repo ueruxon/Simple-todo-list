@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="app-wrapper">
+        <div class="filters-wrapper">
+            <button onclick="todo.filterAll()">
+                <span onclick="todo.filterAll()">ВСЕ</span>
+            </button>
+            <button onclick="todo.filterCompleted()">
+                <span onclick="todo.filterCompleted()">ЗАКОНЧЕННЫЕ</span>
+            </button>
+            <button onclick="todo.filterProcess()">
+                <span onclick="todo.filterProcess()">В ПРОЦЕССЕ</span>
+            </button>
+        </div>
+        <div class="todos-wrapper">
+            <ul class="todos-list">
+                <!-- <li>
+    					<button class="remove-todo"><i class="fa fa-times" aria-hidden="true"></i></button>
+    					<span>Другие дела</span>
+    					<button class="toggle-todo completed-todo"><i class="fa fa-check" aria-hidden="true"></i></button>
+    				</li> -->
+            </ul>
+        </div>
+        <div class="form-wrapper">
+            <form>
+                <input type="text" id="text">
+                <button type="submit" id="add">
+                    <i class="fa fa-plus-circle"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
